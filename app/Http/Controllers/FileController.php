@@ -24,6 +24,7 @@ class FileController extends Controller
 
         $data = $request->only('file');
         $data['user'] = Auth::user()->name;
+        $data['name'] = $request->name;
         if ($request->hasFile('file')) {
             $data['file'] = $request->file('file')->store('files', 'public');
         }
