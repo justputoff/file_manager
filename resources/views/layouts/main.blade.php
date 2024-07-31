@@ -85,6 +85,12 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
+    @if ($message = Session::get('error'))
+    <div class="alert alert-danger alert-dismissible fade show text-center" id="alert" role="alert">
+      <h5 class="text-black">{{ $message }}</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
