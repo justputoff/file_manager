@@ -20,9 +20,9 @@ class FileController extends Controller
         if($request->file->getSize() > 2048){
             return back()->with('error', 'File size must be less than 2MB');
         }
-        
+
         $request->validate([
-            'file' => 'required|file|max:2048',
+            'file' => 'required|file|mimes:jpg,png,jpeg|max:2048',
             'name' => 'required|string|max:255',
         ]);
 
