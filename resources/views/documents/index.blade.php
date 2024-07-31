@@ -4,13 +4,13 @@
 <!-- Content -->
 
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4">Upload File</h4>
+    <h4 class="fw-bold py-3 mb-4">Upload Document</h4>
     <div class="card mb-4">
         <div class="card-body">
-            <form action="{{ route('files.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('documents.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="file" class="form-label">Image</label>
+                    <label for="file" class="form-label">File Document</label>
                     <input type="file" class="form-control" id="file" name="file" required>
                 </div>
                 <div class="mb-3">
@@ -25,7 +25,7 @@
 
 <div class="container-xxl flex-grow-1 container-p-y">
     <div class="card mt-2">
-        <h5 class="card-header">Table Image</h5>
+        <h5 class="card-header">Table Files</h5>
         <div class="table-responsive text-nowrap p-3">
             <table class="table" id="example">
                 <thead>
@@ -38,16 +38,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($files as $file)
+                    @foreach ($documents as $document)
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
-                        <td>{{ $file->user }}</td>
-                        <td>{{ $file->name }}</td>
-                        <td>{{ url(Storage::url($file->file)) }}</td>
+                        <td>{{ $document->user }}</td>
+                        <td>{{ $document->name }}</td>
+                        <td>{{ url(Storage::url($document->file)) }}</td>
                         <td>
-                            <button class="btn btn-sm btn-primary" onclick="copyToClipboard('{{ url(Storage::url($file->file)) }}')">Copy</button>
-                            <a href="{{ Storage::url($file->file) }}" target="_blank" class="btn btn-sm btn-success">Open</a>
-                            <form action="{{ route('files.destroy', $file->id) }}" method="POST" style="display:inline-block;">
+                            <button class="btn btn-sm btn-primary" onclick="copyToClipboard('{{ url(Storage::url($document->file)) }}')">Copy</button>
+                            <a href="{{ Storage::url($document->file) }}" target="_blank" class="btn btn-sm btn-success">Open</a>
+                            <form action="{{ route('documents.destroy', $document->id) }}" method="POST" style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>

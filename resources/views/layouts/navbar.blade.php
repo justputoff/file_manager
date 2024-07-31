@@ -27,7 +27,14 @@
               <li class="menu-item {{ Route::is('files*') ? 'active' : '' }}">
                 <a href="{{ route('files.index') }}" class="menu-link">
                   <i class="menu-icon tf-icons bx bxs-file"></i>
-                  <div data-i18n="Analytics">Files</div>
+                  <div data-i18n="Analytics">Image</div>
+                </a>
+              </li>
+              <!-- Documents -->
+              <li class="menu-item {{ Route::is('documents*') ? 'active' : '' }}">
+                <a href="{{ route('documents.index') }}" class="menu-link">
+                  <i class="menu-icon tf-icons bx bxs-file"></i>
+                  <div data-i18n="Analytics">Document</div>
                 </a>
               </li>
             </ul>
