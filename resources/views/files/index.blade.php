@@ -10,7 +10,7 @@
             <form action="{{ route('files.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="file" class="form-label">File</label>
+                    <label for="file" class="form-label">File -> untuk gambar di rekomendasikan maksimal 2Mb</label>
                     <input type="file" class="form-control" id="file" name="file" required>
                 </div>
                 <div class="mb-3">

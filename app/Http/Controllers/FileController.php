@@ -18,13 +18,12 @@ class FileController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'file' => 'required|file|max:10480',
+            'file' => 'required|file|max:10240',
             'name' => 'required|string|max:255',
         ]);
 
         $data = $request->only('file');
         $data['user'] = Auth::user()->name;
-        $data['name'] = $request->name;
         if ($request->hasFile('file')) {
             $data['file'] = $request->file('file')->store('files', 'public');
         }
