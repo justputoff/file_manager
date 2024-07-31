@@ -10,7 +10,7 @@
             <form action="{{ route('documents.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="file" class="form-label">File Document</label>
+                    <label for="file" class="form-label">File Document max 10mb</label>
                     <input type="file" class="form-control" id="file" name="file" required>
                 </div>
                 <div class="mb-3">
