@@ -32,6 +32,7 @@
                     <tr class="text-nowrap table-dark">
                         <th class="text-white">No</th>
                         <th class="text-white">User</th>
+                        <th class="text-white">Name</th>
                         <th class="text-white">Link</th>
                         <th class="text-white">Actions</th>
                     </tr>
@@ -41,6 +42,7 @@
                     <tr>
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $file->user }}</td>
+                        <td>{{ $file->name }}</td>
                         <td>{{ url(Storage::url($file->file)) }}</td>
                         <td>
                             <button class="btn btn-sm btn-primary" onclick="copyToClipboard('{{ url(Storage::url($file->file)) }}')">Copy</button>
