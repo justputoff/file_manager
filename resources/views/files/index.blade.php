@@ -13,6 +13,10 @@
                     <label for="file" class="form-label">File</label>
                     <input type="file" class="form-control" id="file" name="file" required>
                 </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
                 <button type="submit" class="btn btn-primary">Upload</button>
             </form>
         </div>
